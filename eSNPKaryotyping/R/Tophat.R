@@ -23,7 +23,7 @@ Tophat<-function(Directory,Library_Type,Threads,Transcripts_Annotations,Bowtie_G
     files=system("ls",intern=TRUE)
     setwd(Output_Dir)
     read=paste(Directory, files, sep="")
-    command=paste("tophat2 -o ./ --no-coverage-search --max-multihits 1 -G ",Transcripts_Annotations," -p ",Threads," ",Bowtie_Genome_Index ," ", read, sep="")
+    command=paste("tophat2 -o ./Output_Dir --no-coverage-search --max-multihits 1 -G ",Transcripts_Annotations," -p ",Threads," ",Bowtie_Genome_Index ," ", read, sep="")
   }
   
   if(Library_Type=="Paired"){
@@ -33,7 +33,7 @@ Tophat<-function(Directory,Library_Type,Threads,Transcripts_Annotations,Bowtie_G
     setwd(Output_Dir)
     read1=paste(Directory, first_read, sep="")
     read2=paste(Directory, second_read, sep="")
-    command = paste("tophat2 -o ./ --no-coverage-search --max-multihits 1 -G ",Transcripts_Annotations," -p ",Threads," ",Bowtie_Genome_Index, " ", read1," ", read2, sep="")
+    command = paste("tophat2 -o ./Output_Dir --no-coverage-search --max-multihits 1 -G ",Transcripts_Annotations," -p ",Threads," ",Bowtie_Genome_Index, " ", read1," ", read2, sep="")
   }
   
   
